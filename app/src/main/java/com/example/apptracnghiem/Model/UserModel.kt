@@ -1,3 +1,8 @@
 package com.example.apptracnghiem.Model
 
-data class UserModel(var username: String,var email: String, var password: String, var phone:String )
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class UserModel(var username: String,var email: String, var password: String, var phone:String ) :
+    Parcelable

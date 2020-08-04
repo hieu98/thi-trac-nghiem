@@ -1,3 +1,8 @@
 package com.example.apptracnghiem.Model
 
-data class DeModel (var tenDe:String, var socauhoi:String ,var thoigian: String, var luotlam:String, var temmonhoc:String, var nguoirade:String, var ngayrade:String)
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class DeModel (var tenDe:String, var socauhoi:String ,var thoigian: String, var luotlam:String, var temmonhoc:String, var nguoirade:String, var ngayrade:String) :
+    Parcelable
