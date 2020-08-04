@@ -1,4 +1,3 @@
 package com.example.apptracnghiem.Model
 
-class DapAnModel {
-}
+data class DapAnModel (var causo: String, var dapan: String)
