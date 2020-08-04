@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="#F4F4F4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_margin="10dp"
+            android:id="@+id/txtTendethi"
+            android:textColor="#1080D6"
+            android:text="Tên Đề Thi"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:drawablePadding="3dp"
+            android:drawableLeft="@drawable/ic_baseline_help_outline_24"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="13dp"
+            android:text="Số câu hỏi"
+            android:id="@+id/txtSocauhoi"
+            android:layout_below="@+id/txtTendethi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:drawablePadding="3dp"
+            android:textSize="16sp"
+            android:layout_marginRight="20dp"
+            android:drawableStart="@drawable/ic_baseline_access_time_24"
+            android:layout_below="@+id/txtTendethi"
+            android:layout_toRightOf="@+id/txtSocauhoi"
+            android:text="Thời gian làm"
+            android:id="@+id/txtThoigianlam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtSocauhoi"
+            android:drawableLeft="@drawable/ic_baseline_access_time_24" />
+        <TextView
+            android:drawablePadding="3dp"
+            android:textSize="16sp"
+            android:drawableLeft="@drawable/ic_baseline_equalizer_24"
+            android:layout_marginRight="15dp"
+            android:text="Lượt làm đề"
+            android:layout_below="@+id/txtTendethi"
+            android:layout_toRightOf="@+id/txtThoigianlam"
+            android:id="@+id/txtSoluotlamde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:drawablePadding="3dp"
+            android:textSize="16sp"
+            android:drawableLeft="@drawable/ic_baseline_person_24"
+            android:text="Người ra đề"
+            android:layout_below="@+id/txtSocauhoi"
+            android:layout_centerInParent="true"
+            android:id="@+id/txtNguoirade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"
+            android:text="Tên Môn Học"
+            android:layout_below="@+id/txtSocauhoi"
+            android:id="@+id/txtMonhoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:drawablePadding="3dp"
+            android:layout_marginRight="10dp"
+            android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
+            android:textSize="16sp"
+            android:text="Ngày ra đề"
+            android:layout_below="@+id/txtSocauhoi"
+            android:layout_alignParentRight="true"
+            android:id="@+id/txtNgaydangde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <Button
+        android:drawablePadding="3dp"
+        android:gravity="center"
+        android:drawableLeft="@drawable/ic_baseline_play_arrow_24"
+        android:textColor="@color/colorWhite"
+        android:text="@string/click_play"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
