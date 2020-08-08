@@ -11,8 +11,8 @@ import com.example.apptracnghiem.Util.Injection
 import com.example.apptracnghiem.View.LoginContract
 import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity(override var presenter: LoginContract.Presenter) : AppCompatActivity(),LoginContract.View{
-
+class LogInActivity : AppCompatActivity(),LoginContract.View{
+    override lateinit var presenter: LoginContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

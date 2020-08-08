@@ -1,13 +1,12 @@
 package com.example.apptracnghiem.Presenter
 
-import com.example.apptracnghiem.LoginActivity
+import com.example.apptracnghiem.LogInActivity
 import com.example.apptracnghiem.Model.User
 import com.example.apptracnghiem.Util.LoginRepository
 import com.example.apptracnghiem.Util.OperationCallback
 import com.example.apptracnghiem.View.LoginContract
-import java.lang.Error
 
-class UserPresenter(val view: LoginActivity, val repository:LoginRepository):LoginContract.Presenter  {
+class UserPresenter(val view: LogInActivity, val repository:LoginRepository):LoginContract.Presenter  {
     init {
         view.presenter =this
     }
