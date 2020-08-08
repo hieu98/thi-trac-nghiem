@@ -6,7 +6,7 @@ import com.example.apptracnghiem.Util.LoginRepository
 import com.example.apptracnghiem.Util.OperationCallback
 import com.example.apptracnghiem.View.LoginContract
 
-class UserPresenter(val view: LogInActivity, val repository:LoginRepository):LoginContract.Presenter  {
+class LogInPresenter(val view: LoginContract.View, val repository:LoginRepository):LoginContract.Presenter  {
     init {
         view.presenter =this
     }

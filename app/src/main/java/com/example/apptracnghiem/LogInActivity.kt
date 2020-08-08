@@ -6,28 +6,29 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.example.apptracnghiem.Model.User
-import com.example.apptracnghiem.Presenter.UserPresenter
+import com.example.apptracnghiem.Presenter.LogInPresenter
 import com.example.apptracnghiem.Util.Injection
 import com.example.apptracnghiem.View.LoginContract
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LogInActivity : AppCompatActivity(),LoginContract.View{
+
     override lateinit var presenter: LoginContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        presenter =UserPresenter(this,Injection.provideLogInRepository())
+        presenter = LogInPresenter(this,Injection.provideLogInRepository())
 
         btn_login.setOnClickListener {
             presenter.logIn()
         }
 
-        txtDangKi.setOnClickListener{
-            val intent = Intent(this,
-                SignUpActivity::class.java)
-            startActivity(intent)
-        }
+//        txtDangKi.setOnClickListener{
+////            val intent = Intent(this,
+////                SignUpActivity::class.java)
+////            startActivity(intent)
+////        }
     }
     override fun showLoadingView() {
         viewLoading.visibility= View.VISIBLE
