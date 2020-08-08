@@ -4,4 +4,4 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class DapAnModel (var causo: String, var dapan: String) : Parcelable
+data class DapAn (var causo: String, var dapan: String) : Parcelable

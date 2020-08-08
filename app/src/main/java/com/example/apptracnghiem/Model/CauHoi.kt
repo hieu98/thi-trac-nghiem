@@ -4,5 +4,5 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class CauHoiModel (var causo:String, var A:String, var B :String, var C:String, var D:String) :
+data class CauHoi (var causo:String, var A:String, var B :String, var C:String, var D:String) :
     Parcelable

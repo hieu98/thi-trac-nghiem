@@ -1,4 +1,4 @@
-package com.example.apptracnghiem.View
+package com.example.apptracnghiem
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

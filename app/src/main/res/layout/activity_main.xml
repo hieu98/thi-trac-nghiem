@@ -8,7 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".View.MainActivity">
+        tools:context=".MainActivity">
         <androidx.appcompat.widget.SearchView
             app:searchIcon="@drawable/ic_baseline_menu_24"
             android:id="@+id/searchview"

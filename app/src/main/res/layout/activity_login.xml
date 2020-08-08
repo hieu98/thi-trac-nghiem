@@ -26,6 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <EditText
+            android:id="@+id/editTextEmail"
             android:gravity="center"
             android:textSize="20sp"
             android:layout_marginLeft="34dp"
@@ -45,6 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <EditText
+            android:id="@+id/editTextPassword"
             android:gravity="center"
             android:textSize="20sp"
             android:background="@drawable/tags_background"
@@ -70,4 +72,10 @@
         android:text="Đăng kí"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <include
+        android:id="@+id/viewLoading"
+        layout="@layout/activity_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
 </LinearLayout>

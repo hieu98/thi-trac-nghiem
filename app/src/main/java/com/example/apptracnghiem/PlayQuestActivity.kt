@@ -1,13 +1,12 @@
-package com.example.apptracnghiem.View
+package com.example.apptracnghiem
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.apptracnghiem.R
 
-class SignUpActivity : AppCompatActivity() {
+class PlayQuestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
-
+        setContentView(R.layout.activity_truockhilam)
     }
 }

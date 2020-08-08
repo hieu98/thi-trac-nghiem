@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.LamDeActivity">
+    tools:context=".LamDeActivity">
     <TextView
         android:background="#D3D3D3"
         android:drawableLeft="@drawable/ic_baseline_timer_24"
