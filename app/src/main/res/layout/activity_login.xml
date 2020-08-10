@@ -74,7 +74,7 @@
         android:layout_height="wrap_content"/>
     <include
         android:id="@+id/viewLoading"
-        layout="@layout/activity_loading"
+        layout="@layout/layout_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"/>

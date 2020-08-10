@@ -1,5 +1,6 @@
 package com.example.apptracnghiem.Presenter
 
+import android.util.Log
 import com.example.apptracnghiem.LogInActivity
 import com.example.apptracnghiem.Model.User
 import com.example.apptracnghiem.Util.LoginRepository

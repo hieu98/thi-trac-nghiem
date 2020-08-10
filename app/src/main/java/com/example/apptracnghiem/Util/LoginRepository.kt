@@ -35,7 +35,7 @@ class LoginRepository(val context:Context) {
                     if(loginResponse.isSuccess()){
                         callback.onSuccess(loginResponse.data)
                     }else{
-                        callback.onError(loginResponse.msg)
+                        callback.onError(loginResponse.message)
                     }
 
                 }catch (e:JSONException){

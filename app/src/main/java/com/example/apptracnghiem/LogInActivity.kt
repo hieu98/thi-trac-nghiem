@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import butterknife.ButterKnife
 import com.example.apptracnghiem.Model.User
 import com.example.apptracnghiem.Presenter.LogInPresenter
 import com.example.apptracnghiem.Util.Injection
@@ -18,17 +19,17 @@ class LogInActivity : AppCompatActivity(),LoginContract.View{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        presenter = LogInPresenter(this,Injection.provideLogInRepository())
+        ButterKnife.bind(this)
+        presenter=LogInPresenter(this,Injection.provideLogInRepository(this))
 
         btn_login.setOnClickListener {
             presenter.logIn()
         }
 
-//        txtDangKi.setOnClickListener{
-////            val intent = Intent(this,
-////                SignUpActivity::class.java)
-////            startActivity(intent)
-////        }
+        txtDangKi.setOnClickListener{
+             val intent = Intent(this, SignUpActivity::class.java)
+             startActivity(intent)
+       }
     }
     override fun showLoadingView() {
         viewLoading.visibility= View.VISIBLE
