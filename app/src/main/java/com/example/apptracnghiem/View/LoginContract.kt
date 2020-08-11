@@ -8,7 +8,7 @@ interface LoginContract {
         fun hideLoadingView()
         fun goToMainView(user:User?)
         fun showError(error:String)
-        fun userField():String
+        fun userFideld():String
         fun emailField():String
         fun passwordField():String
         fun validateForm():Boolean
