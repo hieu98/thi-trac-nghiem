@@ -8,11 +8,13 @@ interface LoginContract {
         fun hideLoadingView()
         fun goToMainView(user:User?)
         fun showError(error:String)
+        fun userField():String
         fun emailField():String
         fun passwordField():String
         fun validateForm():Boolean
     }
     interface Presenter{
         fun logIn()
+        fun signUp()
     }
 }

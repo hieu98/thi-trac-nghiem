@@ -1,7 +1,6 @@
 package com.example.apptracnghiem.Presenter
 
-import android.util.Log
-import com.example.apptracnghiem.LogInActivity
+import android.widget.Toast
 import com.example.apptracnghiem.Model.User
 import com.example.apptracnghiem.Util.LoginRepository
 import com.example.apptracnghiem.Util.OperationCallback
@@ -16,6 +15,34 @@ class LogInPresenter(val view: LoginContract.View, val repository:LoginRepositor
         if (view.validateForm()){
             view.showLoadingView()
             repository.logIn(view.emailField(), view.passwordField(), object : OperationCallback{
+                override fun onError(obj: Any?) {
+                    view.hideLoadingView()
+                    obj?.let {
+                        if(it is String){
+                            view.showError(it)
+                        }
+                    }?:kotlin.run {
+                        view.showError("Đã xảy ra lỗi")
+                    }
+                }
+
+                override fun onSuccess(obj: Any?) {
+                    view.hideLoadingView()
+                    obj?.let {
+                        if(it is User){
+                            view.goToMainView(it)
+                        }
+                    }
+                }
+            })
+        }else{
+
+        }
+    }
+    override fun signUp(){
+        if (view.validateForm()){
+            view.showLoadingView()
+            repository.signUp(view.userFideld(),view.emailField(), view.passwordField(), object : OperationCallback{
                 override fun onError(obj: Any?) {
                     view.hideLoadingView()
                     obj?.let {

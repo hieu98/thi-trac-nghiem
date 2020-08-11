@@ -43,10 +43,15 @@ class LogInActivity : AppCompatActivity(),LoginContract.View{
         Toast.makeText(this, "error $error", Toast.LENGTH_LONG).show()
     }
 
+    override fun userFideld(): String {
+        return ""
+    }
+
     override fun goToMainView(user: User?) {
         val bundle:Bundle= Bundle().apply {
             putSerializable("USER",user?:"")
         }
+        Toast.makeText(this,"Đăng nhập thành công",Toast.LENGTH_LONG).show()
         startActivity(Intent(this,MainActivity::class.java).putExtras(bundle))
         finish()
     }

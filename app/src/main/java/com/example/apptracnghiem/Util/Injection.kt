@@ -10,7 +10,6 @@ object Injection {
     }
 
     fun provideLogInRepository(context: Context):LoginRepository{
-        var a = LoginRepository.getInstance(context)
-        return a
+       return LoginRepository.getInstance(context)
     }
 }
