@@ -42,7 +42,7 @@ class LogInPresenter(val view: LoginContract.View, val repository:LoginRepositor
     override fun signUp(){
         if (view.validateForm()){
             view.showLoadingView()
-            repository.signUp(view.userFideld(),view.emailField(), view.passwordField(), object : OperationCallback{
+            repository.signUp(view.userField(),view.emailField(), view.passwordField(), object : OperationCallback{
                 override fun onError(obj: Any?) {
                     view.hideLoadingView()
                     obj?.let {

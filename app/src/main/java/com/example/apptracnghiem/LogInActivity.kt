@@ -43,7 +43,7 @@ class LogInActivity : AppCompatActivity(),LoginContract.View{
         Toast.makeText(this, "error $error", Toast.LENGTH_LONG).show()
     }
 
-    override fun userFideld(): String {
+    override fun userField(): String {
         return ""
     }
 

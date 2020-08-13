@@ -1,41 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:title="Chuyên mục">
-        <menu>
-            <item
-                android:id="@+id/nav_goiy"
-                android:title="Gợi ý" />
-            <item
-                android:id="@+id/nav_daihoc"
-                android:title="Đại học" />
-            <item
-                android:id="@+id/nav_thcs_thpt"
-                android:title="THCS + THPT" />
-            <item
-                android:id="@+id/nav_laptrinh"
-                android:title="Lập trình" />
-            <item
-                android:id="@+id/nav_chuyenmon"
-                android:title="Chuyên môn" />
-            <item
-                android:id="@+id/nav_tienganh"
-                android:title="Tiếng Anh" />
-            <item
-                android:id="@+id/nav_ngonngukhac"
-                android:title="Ngôn ngữ khác" />
-            <item
-                android:id="@+id/nav_kienthucxahoi"
-                android:title="Kiến thức xã hội" />
-        </menu>
-    </item>
     <group android:id="@+id/group_user">
         <item
             android:id="@+id/nav_dedalam"
             android:icon="@drawable/ic_baseline_class_24"
-            android:title="Đề đã làm"/>
+            android:title="@string/de_da_lam"/>
         <item
             android:id="@+id/nav_dedaluu"
             android:icon="@drawable/ic_baseline_class_24"
-            android:title="Đề đã lưu"/>
+            android:title="@string/de_da_luu"/>
     </group>
 </menu>

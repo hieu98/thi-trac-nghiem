@@ -49,7 +49,7 @@ class SignUpActivity : AppCompatActivity(),LoginContract.View{
         finish()
     }
 
-    override fun userFideld(): String {
+    override fun userField(): String {
         return editTextUserSignup.text.toString()
     }
 
