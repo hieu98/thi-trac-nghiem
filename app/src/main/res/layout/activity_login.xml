@@ -26,13 +26,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <EditText
+            android:inputType="textEmailAddress"
             android:id="@+id/editTextEmail"
-            android:gravity="center"
-            android:textSize="20sp"
+            android:paddingLeft="9dp"
+            android:textSize="16sp"
             android:layout_marginLeft="34dp"
             android:background="@drawable/tags_background"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="30dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_marginTop="20dp"
@@ -46,12 +47,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <EditText
+            android:inputType="textPassword"
             android:id="@+id/editTextPassword"
-            android:gravity="center"
-            android:textSize="20sp"
+            android:paddingLeft="9dp"
+            android:textSize="16sp"
             android:background="@drawable/tags_background"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="30dp"/>
     </LinearLayout>
     <Button
         android:id="@+id/btn_login"

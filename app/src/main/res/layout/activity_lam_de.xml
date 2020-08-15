@@ -22,7 +22,7 @@
     <ListView
         app:layout_constraintTop_toBottomOf="@+id/txtthoigian"
         app:layout_constraintBottom_toTopOf="@+id/relat"
-        android:id="@+id/lv_de"
+        android:id="@+id/list_cauhoi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

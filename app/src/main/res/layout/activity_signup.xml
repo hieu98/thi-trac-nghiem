@@ -23,12 +23,12 @@
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/editTextUserSignup"
-            android:gravity="center"
-            android:textSize="20sp"
+            android:paddingLeft="9dp"
+            android:textSize="16sp"
             android:layout_marginLeft="19dp"
             android:background="@drawable/tags_background"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="30dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_marginTop="30dp"
@@ -42,13 +42,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <EditText
+            android:paddingLeft="9dp"
+            android:inputType="textEmailAddress"
             android:id="@+id/editTextEmailSignUp"
-            android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:layout_marginLeft="34dp"
             android:background="@drawable/tags_background"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="30dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_marginTop="30dp"
@@ -62,8 +63,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <EditText
+            android:paddingLeft="9dp"
+            android:inputType="textPassword"
             android:id="@+id/editTextPasswordSignUp"
-            android:gravity="center"
             android:textSize="20sp"
             android:background="@drawable/tags_background"
             android:layout_width="200dp"

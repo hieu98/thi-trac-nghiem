@@ -1,22 +1,24 @@
 package com.example.apptracnghiem
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
 import android.view.MenuItem
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.ActionBarDrawerToggle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.Toast
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
-import butterknife.ButterKnife
+import com.example.apptracnghiem.Adapater.CategoryAdapater
+import com.example.apptracnghiem.Model.Category
 import com.example.apptracnghiem.Model.User
-import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.nav_header.*
 
+class MainActivity : AppCompatActivity(),AdapterView.OnItemClickListener {
 
-class MainActivity : AppCompatActivity() {
+    private var arrayList:ArrayList<Category> ?=null
+    private var cateAdapater :CategoryAdapater ?= null
     private var username :String = ""
     private var email :String=""
     private var token :String =""
@@ -30,7 +32,25 @@ class MainActivity : AppCompatActivity() {
             txtEmail.text = email
         }
         closeDrawer()
+        arrayList = setCategory()
+        cateAdapater = CategoryAdapater(this, arrayList!!)
+        grid_view.adapter = cateAdapater
+        grid_view.onItemClickListener =this
 
+
+
+    }
+
+    fun setCategory():ArrayList<Category>{
+        val arrayList : ArrayList<Category> = ArrayList()
+        arrayList.add(Category(1,"Đại học"))
+        arrayList.add(Category(2,"THCS & THPT"))
+        arrayList.add(Category(3,"Lập trình"))
+        arrayList.add(Category(4,"Chuyên môn"))
+        arrayList.add(Category(5,"Tiếng Anh"))
+        arrayList.add(Category(6,"Ngôn ngữ khác"))
+        arrayList.add(Category(7,"Kiến thức xã hội"))
+        return arrayList
     }
 
     private fun closeDrawer(){
@@ -61,5 +81,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+        val item:Category = arrayList!![p2]
+        Toast.makeText(this,item.tenCategory,Toast.LENGTH_LONG).show()
+        val intent = Intent(this, ListDeActivity::class.java)
+        intent.putExtra("id",item.id)
+        startActivity(intent)
+    }
 
 }
