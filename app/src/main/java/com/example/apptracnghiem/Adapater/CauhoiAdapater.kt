@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.example.apptracnghiem.Model.CauHoi
-import com.example.apptracnghiem.Model.DeThi
 import com.example.apptracnghiem.R
 
 class CauhoiAdapater(var context: Context, var arrayListCauhoi: ArrayList<CauHoi>): BaseAdapter() {
@@ -24,6 +23,7 @@ class CauhoiAdapater(var context: Context, var arrayListCauhoi: ArrayList<CauHoi
 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
         val view:View = View.inflate(context, R.layout.item_cauhoi,null)
+
         return view
     }
 }

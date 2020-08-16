@@ -19,6 +19,7 @@ class LogInActivity : AppCompatActivity(),LoginContract.View{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        supportActionBar?.hide()
         ButterKnife.bind(this)
         presenter=LogInPresenter(this,Injection.provideLogInRepository(this))
 

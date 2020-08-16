@@ -1,13 +1,11 @@
 package com.example.apptracnghiem
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
-import com.example.apptracnghiem.Adapater.CategoryAdapater
+import androidx.appcompat.app.AppCompatActivity
 import com.example.apptracnghiem.Adapater.ListDeAdapater
-import com.example.apptracnghiem.Model.Category
 import com.example.apptracnghiem.Model.DeThi
 import kotlinx.android.synthetic.main.activity_listde.*
 
@@ -16,6 +14,7 @@ class ListDeActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
     private var arrayListDe:ArrayList<DeThi> ?=null
     private var DeAdapater : ListDeAdapater?= null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listde)
@@ -23,6 +22,26 @@ class ListDeActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         DeAdapater = ListDeAdapater(this,arrayListDe!!)
         list_de.adapter = DeAdapater
         list_de.onItemClickListener=this
+        ActionBarCustom()
+    }
+
+    private fun ActionBarCustom(){
+        val title = intent.getStringExtra("name")
+        supportActionBar?.title =title
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
+    }
+
+    fun getListDeCategory(){
+
+    }
+
+    fun getListDedaluu(){
+
+    }
+    fun getListDedalam(){
+
     }
 
     override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {

@@ -12,6 +12,7 @@ import androidx.core.view.GravityCompat
 import com.example.apptracnghiem.Adapater.CategoryAdapater
 import com.example.apptracnghiem.Model.Category
 import com.example.apptracnghiem.Model.User
+import com.example.apptracnghiem.Util.Global
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.nav_header.*
 
@@ -19,17 +20,19 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemClickListener {
 
     private var arrayList:ArrayList<Category> ?=null
     private var cateAdapater :CategoryAdapater ?= null
-    private var username :String = ""
+    private var username :String=""
     private var email :String=""
-    private var token :String =""
+    private var token :String=""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.hide()
         getDataUser()
         btn_nav.setOnClickListener {
             drawer.openDrawer(GravityCompat.START)
-            txtUsername.text = username
-            txtEmail.text = email
+            txtUsername.text = Global.username
+            txtEmail.text = Global.email
         }
         closeDrawer()
         arrayList = setCategory()
@@ -72,12 +75,12 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemClickListener {
         val bundle : Bundle? = intent.extras
         val user : User? = bundle?.getSerializable("USER") as User?
         if (user != null) {
-            token = user.token
-            email  =user.email
-            username  = user.username
-            Log.v("token", token)
-            Log.v("email", email)
-            Log.v("name", username)
+            Global.token = user.token
+            Global.email  =user.email
+            Global.username  = user.username
+            Log.v("token", Global.token)
+            Log.v("email", Global.email)
+            Log.v("name", Global.username)
         }
     }
 
@@ -86,6 +89,7 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemClickListener {
         Toast.makeText(this,item.tenCategory,Toast.LENGTH_LONG).show()
         val intent = Intent(this, ListDeActivity::class.java)
         intent.putExtra("id",item.id)
+        intent.putExtra("name",item.tenCategory)
         startActivity(intent)
     }
 

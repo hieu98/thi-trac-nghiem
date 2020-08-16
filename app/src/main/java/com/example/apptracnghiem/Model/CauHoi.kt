@@ -1,8 +1,6 @@
 package com.example.apptracnghiem.Model
 
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import java.io.Serializable
 
-@Parcelize
-data class CauHoi (var causo:String, var A:String, var B :String, var C:String, var D:String) :
-    Parcelable
+data class CauHoi (var causo:String,var cauhoi:String, var A:String, var B :String, var C:String, var D:String) :
+    Serializable

@@ -20,13 +20,12 @@ class SignUpActivity : AppCompatActivity(),LoginContract.View{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
+        supportActionBar?.hide()
         ButterKnife.bind(this)
         presenter=LogInPresenter(this,Injection.provideLogInRepository(this))
-
         btn_signup.setOnClickListener {
             presenter.signUp()
         }
-
     }
     override fun showLoadingView() {
         viewLoading1.visibility= View.VISIBLE

@@ -1,7 +1,5 @@
 package com.example.apptracnghiem.Model
 
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import java.io.Serializable
 
-@Parcelize
-data class DapAn (var causo: String, var dapan: String) : Parcelable
+data class DapAn (var causo: String, var dapan: String) : Serializable
