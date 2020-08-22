@@ -66,6 +66,9 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemClickListener {
                 R.id.nav_dedaluu->{
 
                 }
+                R.id.log_out->{
+
+                }
             }
             return@setNavigationItemSelectedListener true
         }

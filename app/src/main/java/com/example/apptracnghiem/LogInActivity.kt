@@ -8,6 +8,7 @@ import android.widget.Toast
 import butterknife.ButterKnife
 import com.example.apptracnghiem.Model.User
 import com.example.apptracnghiem.Presenter.LogInPresenter
+import com.example.apptracnghiem.Util.Global
 import com.example.apptracnghiem.Util.Injection
 import com.example.apptracnghiem.View.LoginContract
 import kotlinx.android.synthetic.main.activity_login.*
@@ -19,6 +20,10 @@ class LogInActivity : AppCompatActivity(),LoginContract.View{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+//        if(Global.token!=""){
+//            val intent = Intent(this,MainActivity::class.java)
+//            startActivity(intent)
+//        }
         supportActionBar?.hide()
         ButterKnife.bind(this)
         presenter=LogInPresenter(this,Injection.provideLogInRepository(this))

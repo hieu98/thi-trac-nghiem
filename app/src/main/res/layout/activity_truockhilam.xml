@@ -56,8 +56,9 @@
             android:textSize="16sp"
             android:drawableLeft="@drawable/ic_baseline_person_24"
             android:text="Người ra đề"
-            android:layout_below="@+id/txtSocauhoi"
-            android:layout_centerInParent="true"
+            android:layout_below="@+id/txtTendethi"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
             android:id="@+id/txtNguoirade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -70,6 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
+            android:layout_marginBottom="7dp"
             android:drawablePadding="3dp"
             android:layout_marginRight="10dp"
             android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
@@ -82,11 +84,12 @@
             android:layout_height="wrap_content"/>
     </RelativeLayout>
     <Button
-        android:drawablePadding="3dp"
+        android:id="@+id/btn_clicktoplay"
+        android:drawablePadding="5dp"
         android:gravity="center"
         android:drawableLeft="@drawable/ic_baseline_play_arrow_24"
         android:textColor="@color/colorWhite"
-        android:text="@string/click_play"
+        android:text="Click để bắt đầu làm bài   "
         android:background="@color/colorPrimary"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"

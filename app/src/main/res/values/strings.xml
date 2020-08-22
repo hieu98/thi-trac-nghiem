@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">AppTracNghiem</string>
-    <string name="click_play">Click để bắt đầu làm bài</string>
+<!--    <string name="click_play">Click để bắt đầu làm bài</string>-->
     <string name="chuyen_muc">Chuyên mục</string>
     <string name="de_da_lam">Đề đã làm</string>
     <string name="de_da_luu">Đề đã lưu</string>
     <string name="drawOpen">Mở</string>
     <string name="drawClose">Đóng</string>
+    <string name="log_out">Đăng xuất</string>
 </resources>
