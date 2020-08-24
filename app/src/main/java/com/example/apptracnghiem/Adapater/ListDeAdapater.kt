@@ -23,7 +23,7 @@ class ListDeAdapater(var context:Context, var arrayListDe: ArrayList<DeThi>) : B
     }
 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-        val listItem:DeThi = arrayListDe.get(p0)
+        val listItem:DeThi = arrayListDe[p0]
         val view =View.inflate(context, R.layout.item_danhsachde,null)
         val tenDe : TextView = view.findViewById(R.id.txtTendethi)
         tenDe.text = listItem.tenDe

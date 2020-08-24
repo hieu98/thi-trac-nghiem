@@ -116,6 +116,7 @@ class ListDeActivity : AppCompatActivity(), AdapterView.OnItemClickListener{
     override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
         val item: DeThi = arrayListDe!![p2]
         val intent = Intent(this, PlayQuestActivity::class.java)
+        intent.putExtra("id_de",item.id_de)
         intent.putExtra("tenDe",item.tenDe)
         intent.putExtra("luotlam",item.luotlam)
         intent.putExtra("ngayrade",item.ngayrade)

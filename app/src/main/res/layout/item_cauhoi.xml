@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:background="#F4F4F4"
+            android:background="#ECEBEB"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -21,6 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
+                android:id="@+id/txtCauhoi"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="20dp"
                 android:textSize="16sp"
@@ -28,6 +29,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <LinearLayout
+                android:id="@+id/ln1"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/background_question"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
@@ -51,6 +55,9 @@
                     android:layout_height="wrap_content"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/ln2"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/background_question"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
@@ -74,6 +81,9 @@
                     android:layout_height="wrap_content"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/ln3"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/background_question"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
@@ -97,6 +107,9 @@
                     android:layout_height="wrap_content"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/ln4"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/background_question"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
