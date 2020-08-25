@@ -35,12 +35,16 @@ class ListDeActivity : AppCompatActivity(), AdapterView.OnItemClickListener{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listde)
         val id = intent.getIntExtra("id",-1).toString()
+        val a=intent.getStringExtra("a")
         Log.v("id",id)
         arrayListDe = ArrayList()
         DeAdapater = ListDeAdapater(this,arrayListDe)
         list_de.adapter = DeAdapater
         list_de.onItemClickListener=this
         ActionBarCustom()
+        if (a != null) {
+            getListDedaluuhoacDalam(a)
+        }
         getListDeCategory(id)
     }
 
@@ -90,11 +94,6 @@ class ListDeActivity : AppCompatActivity(), AdapterView.OnItemClickListener{
             },
             Response.ErrorListener {  })
         {
-//            override fun getParams(): MutableMap<String, String> {
-//                    params["category"] = id
-//                    return params
-//            }
-
             override fun getHeaders(): MutableMap<String, String> {
                 val headers = HashMap<String, String>()
                 headers["Authorization"] = Global.token
@@ -105,16 +104,58 @@ class ListDeActivity : AppCompatActivity(), AdapterView.OnItemClickListener{
         queue.add(stringRequest)
     }
 
-    fun getListDedaluu(){
+    fun getListDedaluuhoacDalam(a:String){
+        val url:String
+        if (a=="1"){
+        url = Server.deDaluu()}
+        else{url=Server.deDalam()}
+        Log.v("url",url)
+        val queue = Volley.newRequestQueue(this)
+        val stringRequest = @RequiresApi(Build.VERSION_CODES.O)
+        object: StringRequest(Request.Method.GET, url,
+            Response.Listener<String> { response ->
+                val jsonObjects = JSONObject(response)
+                val jsonObject1= jsonObjects.getJSONObject("data")
+                val jsonArray = jsonObject1.getJSONArray("tests")
+                try {
+                    Log.v("rp",response.toString())
+                    Log.v("jsar",jsonArray.toString())
+                    for (i in 0 until jsonArray.length()) {
+                        val jsonObject = jsonArray.getJSONObject(i)
+                        val id_de = jsonObject.getString("id")
+                        val tenDe = jsonObject.getString("name")
+                        val socauhoi = jsonObject.getString("question")
+                        val thoigian = jsonObject.getString("time")
+                        val luotlam = jsonObject.getString("access")
+                        val temmonhoc = jsonObject.getString("tag")
+                        val nguoirade = jsonObject.getString("parent")
+                        var ngayrade = jsonObject.getString("created_at")
+                        Log.v("id",id_de)
+                        Log.v("nguoirade",nguoirade)
 
+                        ngayrade = ngayrade.substring(0,10)
+                        arrayListDe.add(DeThi(id_de,tenDe,socauhoi,thoigian,luotlam,temmonhoc,nguoirade,ngayrade))
+                        Log.v("arr",arrayListDe.toString())
+                        DeAdapater?.notifyDataSetChanged()
+                    }
+                }catch (e: JSONException){
+                    e.printStackTrace()
+                }
+            },
+            Response.ErrorListener {  })
+        {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["Authorization"] = Global.token
+                return headers
+            }
+        }
+
+        queue.add(stringRequest)
     }
-    fun getListDedalam(){
-
-    }
-
 
     override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        val item: DeThi = arrayListDe!![p2]
+        val item: DeThi = arrayListDe[p2]
         val intent = Intent(this, PlayQuestActivity::class.java)
         intent.putExtra("id_de",item.id_de)
         intent.putExtra("tenDe",item.tenDe)

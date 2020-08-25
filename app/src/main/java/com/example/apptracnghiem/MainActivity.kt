@@ -61,10 +61,13 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemClickListener {
         nav_view.setNavigationItemSelectedListener { item: MenuItem ->
             when(item.itemId){
                 R.id.nav_dedalam->{
-
+                    val intent= Intent(this,ListDeActivity::class.java)
+                    intent.putExtra("a","1")
+                    startActivity(intent)
                 }
                 R.id.nav_dedaluu->{
-
+                    val intent= Intent(this,ListDeActivity::class.java)
+                    startActivity(intent)
                 }
                 R.id.log_out->{
                     val intent = Intent(this, LogInActivity::class.java)

@@ -21,14 +21,13 @@ import com.example.apptracnghiem.Util.Server
 import kotlinx.android.synthetic.main.activity_lam_de.*
 import kotlinx.android.synthetic.main.activity_truockhilam.*
 import kotlinx.android.synthetic.main.item_cauhoi.*
+import kotlinx.android.synthetic.main.item_cauhoi.view.*
 import org.json.JSONException
 import org.json.JSONObject
 
 class LamDeActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
     private lateinit var arrayListCauhoi:ArrayList<CauHoi>
     private var cauhoiAdapater : CauhoiAdapater?= null
-    private  var select:Array<String> ?= null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lam_de)
@@ -40,6 +39,7 @@ class LamDeActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         val thoigian = time.times(60000).toLong()
         val inten=Intent(this@LamDeActivity,ResultActivity::class.java)
         inten.putExtra("socauhoi",socauhoi)
+        inten.putExtra("id",id)
         Log.v("thoigian", thoigian.toString())
         if (id != null) {
             Log.v("id_de", id)
@@ -71,8 +71,6 @@ class LamDeActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
                 startActivity(inten)
             }
         }.start()
-
-
     }
 
     fun getQuestion(id: String){
@@ -116,10 +114,10 @@ class LamDeActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
             Response.ErrorListener { })
         {
             override fun getHeaders(): MutableMap<String, String> {
-                val headers = HashMap<String, String>()
-                headers["Authorization"] = Global.token
-                return headers
-            }
+            val headers = HashMap<String, String>()
+            headers["Authorization"] = Global.token
+            return headers
+        }
         }
 
         queue.add(stringRequest)
@@ -144,11 +142,15 @@ class LamDeActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         }
         return super.onOptionsItemSelected(item)
     }
-
-
-
+    
     override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        cauhoiAdapater?.notifyDataSetChanged()
+//        ln1.setOnClickListener {
+//            A.setBackgroundResource(R.drawable.background_question_red)
+//            D.setBackgroundResource(R.drawable.tags_background)
+//            B.setBackgroundResource(R.drawable.tags_background)
+//            C.setBackgroundResource(R.drawable.tags_background)
+//        }
+//        cauhoiAdapater?.notifyDataSetChanged()
     }
 
 }
