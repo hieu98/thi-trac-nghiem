@@ -15,8 +15,10 @@ class PlayQuestActivity : AppCompatActivity() {
         val id_de = intent.getStringExtra("id_de")
         val tenDe = intent.getStringExtra("tenDe")
         txtTendethi.text = tenDe
-        txtSocauhoi.text = intent.getStringExtra("socauhoi")
-        txtThoigianlam.text = intent.getStringExtra("thoigian")
+        val socauhoi = intent.getStringExtra("socauhoi")
+        txtSocauhoi.text = socauhoi
+        val thoigian  = intent.getStringExtra("thoigian")
+        txtThoigianlam.text = thoigian
         txtSoluotlamde.text = intent.getStringExtra("luotlam")
         txtMonhoc.text = intent.getStringExtra("temmonhoc")
         txtNguoirade.text = intent.getStringExtra("nguoirade")
@@ -29,11 +31,15 @@ class PlayQuestActivity : AppCompatActivity() {
             val intent = Intent(this, LamDeActivity::class.java)
             intent.putExtra("id",id_de)
             intent.putExtra("tenDe",tenDe)
+            intent.putExtra("socauhoi",socauhoi)
+            if (thoigian != null) {
+                intent.putExtra("thoigianlam",thoigian.toInt())
+            }
             startActivity(intent)
         }
     }
     private fun ActionBarCustom(){
-        val title = ""
+        val title = "Chuẩn bị làm bài"
         supportActionBar?.title =title
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

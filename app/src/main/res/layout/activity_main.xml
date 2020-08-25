@@ -11,8 +11,10 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
         <androidx.appcompat.widget.Toolbar
+            android:gravity="center"
+            app:title="Danh sách chuyên mục"
             app:layout_constraintTop_toTopOf="parent"
-            app:titleMarginStart="20dp"
+            app:titleMarginStart="70dp"
             android:id="@+id/toolbar"
             android:background="?attr/colorPrimary"
             android:layout_width="match_parent"

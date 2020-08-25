@@ -67,7 +67,8 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemClickListener {
 
                 }
                 R.id.log_out->{
-
+                    val intent = Intent(this, LogInActivity::class.java)
+                    startActivity(intent)
                 }
             }
             return@setNavigationItemSelectedListener true

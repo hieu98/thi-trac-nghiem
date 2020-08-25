@@ -7,4 +7,6 @@
     <string name="drawOpen">Mở</string>
     <string name="drawClose">Đóng</string>
     <string name="log_out">Đăng xuất</string>
+    <string name="chuc_mung">Chúc mừng bạn hoàn thành bài thi</string>
+    <string name="kqcb">Kết quả của bạn là :</string>
 </resources>

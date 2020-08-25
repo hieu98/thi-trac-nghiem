@@ -58,7 +58,7 @@ class ListDeActivity : AppCompatActivity(), AdapterView.OnItemClickListener{
         Log.v("url",url)
         val queue = Volley.newRequestQueue(this)
         val stringRequest = @RequiresApi(Build.VERSION_CODES.O)
-        object: StringRequest(Request.Method.GET, url,
+           object: StringRequest(Request.Method.GET, url,
             Response.Listener<String> { response ->
                 val jsonObjects = JSONObject(response)
                 val jsonObject1= jsonObjects.getJSONObject("data")
