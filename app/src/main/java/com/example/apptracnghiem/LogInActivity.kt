@@ -37,13 +37,13 @@ class LogInActivity : AppCompatActivity(),LoginContract.View{
              startActivity(intent)
        }
     }
-    override fun showLoadingView() {
-        viewLoading.visibility= View.VISIBLE
-    }
-
-    override fun hideLoadingView() {
-        viewLoading.visibility= View.GONE
-    }
+//    override fun showLoadingView() {
+//        viewLoading.visibility= View.VISIBLE
+//    }
+//
+//    override fun hideLoadingView() {
+//        viewLoading.visibility= View.GONE
+//    }
 
     override fun showError(error: String) {
         Toast.makeText(this, "error $error", Toast.LENGTH_LONG).show()

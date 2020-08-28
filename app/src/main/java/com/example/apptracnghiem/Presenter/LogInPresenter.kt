@@ -13,10 +13,10 @@ class LogInPresenter(val view: LoginContract.View, val repository:LoginRepositor
 
     override fun logIn() {
         if (view.validateForm()){
-            view.showLoadingView()
+//            view.showLoadingView()
             repository.logIn(view.emailField(), view.passwordField(), object : OperationCallback{
                 override fun onError(obj: Any?) {
-                    view.hideLoadingView()
+//                    view.hideLoadingView()
                     obj?.let {
                         if(it is String){
                             view.showError(it)
@@ -27,7 +27,7 @@ class LogInPresenter(val view: LoginContract.View, val repository:LoginRepositor
                 }
 
                 override fun onSuccess(obj: Any?) {
-                    view.hideLoadingView()
+//                    view.hideLoadingView()
                     obj?.let {
                         if(it is User){
                             view.goToMainView(it)
@@ -41,10 +41,10 @@ class LogInPresenter(val view: LoginContract.View, val repository:LoginRepositor
     }
     override fun signUp(){
         if (view.validateForm()){
-            view.showLoadingView()
+//            view.showLoadingView()
             repository.signUp(view.userField(),view.emailField(), view.passwordField(), object : OperationCallback{
                 override fun onError(obj: Any?) {
-                    view.hideLoadingView()
+//                    view.hideLoadingView()
                     obj?.let {
                         if(it is String){
                             view.showError(it)
@@ -55,7 +55,7 @@ class LogInPresenter(val view: LoginContract.View, val repository:LoginRepositor
                 }
 
                 override fun onSuccess(obj: Any?) {
-                    view.hideLoadingView()
+//                    view.hideLoadingView()
                     obj?.let {
                         if(it is User){
                             view.goToMainView(it)

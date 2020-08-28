@@ -2,9 +2,11 @@
 <LinearLayout
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/signup">
     <TextView
-        android:layout_marginTop="50dp"
+        android:textColor="@color/colorTextPrimary"
+        android:layout_marginTop="100dp"
         android:layout_gravity="center"
         android:textSize="40sp"
         android:text="Đăng Kí"
@@ -16,6 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <TextView
+            android:textColor="@color/colorTextPrimary"
             android:layout_marginRight="5dp"
             android:textSize="20sp"
             android:text="Họ tên :"
@@ -26,7 +29,7 @@
             android:paddingLeft="9dp"
             android:textSize="16sp"
             android:layout_marginLeft="19dp"
-            android:background="@drawable/tags_background"
+            android:background="@drawable/background_question"
             android:layout_width="200dp"
             android:layout_height="30dp"/>
     </LinearLayout>
@@ -36,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <TextView
+            android:textColor="@color/colorTextPrimary"
             android:layout_marginRight="5dp"
             android:textSize="20sp"
             android:text="Email:"
@@ -47,7 +51,7 @@
             android:id="@+id/editTextEmailSignUp"
             android:textSize="16sp"
             android:layout_marginLeft="34dp"
-            android:background="@drawable/tags_background"
+            android:background="@drawable/background_question"
             android:layout_width="200dp"
             android:layout_height="30dp"/>
     </LinearLayout>
@@ -57,6 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <TextView
+            android:textColor="@color/colorTextPrimary"
             android:layout_marginRight="5dp"
             android:textSize="20sp"
             android:text="Mật khẩu:"
@@ -67,7 +72,7 @@
             android:inputType="textPassword"
             android:id="@+id/editTextPasswordSignUp"
             android:textSize="20sp"
-            android:background="@drawable/tags_background"
+            android:background="@drawable/background_question"
             android:layout_width="200dp"
             android:layout_height="wrap_content"/>
     </LinearLayout>

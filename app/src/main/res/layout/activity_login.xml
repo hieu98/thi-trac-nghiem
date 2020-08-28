@@ -3,11 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:src="@drawable/login"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
     <TextView
         android:textColor="@color/colorTextPrimary"
-        android:layout_marginTop="70dp"
+
         android:text="Đăng Nhập"
         android:textSize="30sp"
         android:gravity="center"
@@ -74,10 +77,5 @@
         android:text="Đăng kí"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <include
-        android:id="@+id/viewLoading"
-        layout="@layout/layout_loading"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"/>
+
 </LinearLayout>

@@ -27,13 +27,13 @@ class SignUpActivity : AppCompatActivity(),LoginContract.View{
             presenter.signUp()
         }
     }
-    override fun showLoadingView() {
-        viewLoading1.visibility= View.VISIBLE
-    }
-
-    override fun hideLoadingView() {
-        viewLoading1.visibility= View.GONE
-    }
+//    override fun showLoadingView() {
+//        viewLoading1.visibility= View.VISIBLE
+//    }
+//
+//    override fun hideLoadingView() {
+//        viewLoading1.visibility= View.GONE
+//    }
 
     override fun showError(error: String) {
         Toast.makeText(this, "error $error", Toast.LENGTH_LONG).show()

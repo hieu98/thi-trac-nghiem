@@ -4,8 +4,8 @@ import com.example.apptracnghiem.Model.User
 
 interface LoginContract {
     interface View: BaseView<Presenter>{
-        fun showLoadingView()
-        fun hideLoadingView()
+//        fun showLoadingView()
+//        fun hideLoadingView()
         fun goToMainView(user:User?)
         fun showError(error:String)
         fun userField():String
