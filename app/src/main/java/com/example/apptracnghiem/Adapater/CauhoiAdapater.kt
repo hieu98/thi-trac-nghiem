@@ -55,15 +55,24 @@ class CauhoiAdapater(var context: Context, var arrayListCauhoi: ArrayList<CauHoi
         val tvD :TextView= view.findViewById(R.id.D)
         ln1.setOnClickListener {
             arrDapAn[p0].kq="A"
-
+            tvA.setBackgroundResource(R.drawable.background_question_red)
+            tvB.setBackgroundResource(R.drawable.tags_background)
+            tvC.setBackgroundResource(R.drawable.tags_background)
+            tvD.setBackgroundResource(R.drawable.tags_background)
         }
         ln2.setOnClickListener {
             arrDapAn[p0].kq="B"
-
+            tvB.setBackgroundResource(R.drawable.background_question_red)
+            tvA.setBackgroundResource(R.drawable.tags_background)
+            tvC.setBackgroundResource(R.drawable.tags_background)
+            tvD.setBackgroundResource(R.drawable.tags_background)
         }
         ln3.setOnClickListener {
             arrDapAn[p0].kq="C"
-
+            tvC.setBackgroundResource(R.drawable.background_question_red)
+            tvB.setBackgroundResource(R.drawable.tags_background)
+            tvA.setBackgroundResource(R.drawable.tags_background)
+            tvD.setBackgroundResource(R.drawable.tags_background)
         }
         ln4.setOnClickListener {
             arrDapAn[p0].kq="D"
