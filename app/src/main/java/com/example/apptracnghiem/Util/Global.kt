@@ -8,5 +8,6 @@ public class Global : Application() {
         var token: String = ""
         var username:String =""
         var email:String=""
+        var select: Array<String>? = null
     }
 }

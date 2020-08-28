@@ -27,41 +27,57 @@ import org.json.JSONObject
 class ResultActivity : AppCompatActivity() {
     var ketqua:String="5"
     var time :Int =0
-    var select:Array<String>?=null
+    var select: List<String>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.acticity_result)
         supportActionBar?.hide()
         val socauhoi = intent.getStringExtra("socauhoi")
         val id= intent.getStringExtra("id")
-        select = intent.getStringArrayExtra("select")
+        select = intent.getStringArrayListExtra("select")!!
+        Log.v("slect",select.toString())
+
         time = intent.getIntExtra("thammo",-1)
+        Log.v("time",time.toString())
+
         btn_backmain.setOnClickListener {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
+
         if (id != null) {
-            getResult(id)
+            if (socauhoi != null) {
+                getResult(id,socauhoi)
+            }
         }
-        kq_lam.text = ketqua + "/" + socauhoi
+        Log.v("glb sl",Global.select.toString())
     }
-    fun getResult(id:String){
+    fun getResult(id:String,socauhoi:String){
         val url = Server.cauHoide()+id+"/submit"
         Log.v("url", url)
         val queue = Volley.newRequestQueue(this)
-
         val stringRequestg = object : StringRequest(Request.Method.POST, url, Response.Listener { response ->
             val jsonObject = JSONObject(response)
             val jsonObject1 = jsonObject.getJSONObject("data")
             ketqua = jsonObject1.getString("point")
+            kq_lam.text = ketqua + "/" + socauhoi
         }, Response.ErrorListener { error ->})
         {
-            override fun getParams(): Map<String, String> {
-                val params: MutableMap<String, String> = HashMap()
-                params["time"] = time.toString()
-                params["selected"] = select.toString()
-                return params
+            override fun getBodyContentType(): String {
+                return "application/json"
             }
+
+            @Throws(AuthFailureError::class)
+            override fun getBody(): ByteArray {
+                val params2 = HashMap<String, Int>()
+                params2.put("time",time)
+                val param3= HashMap<String,List<String>>()
+                select?.let { param3.put("selected", it) }
+                Log.v("param",JSONObject(params2+param3).toString())
+                return JSONObject(param3+params2).toString().toByteArray()
+            }
+
             override fun getHeaders(): MutableMap<String, String> {
                 val headers = HashMap<String, String>()
                 headers["Authorization"] = Global.token
