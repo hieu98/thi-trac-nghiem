@@ -107,9 +107,11 @@ class ListDeActivity : AppCompatActivity(), AdapterView.OnItemClickListener{
     fun getListDedaluuhoacDalam(a:String){
         val url:String
         if (a=="1"){
-        url = Server.deDaluu()}
-        else{url=Server.deDalam()}
-        Log.v("url",url)
+        url = Server.deDalam()
+        }
+        else{
+            url=Server.deDaluu()
+        }
         val queue = Volley.newRequestQueue(this)
         val stringRequest = @RequiresApi(Build.VERSION_CODES.O)
         object: StringRequest(Request.Method.GET, url,

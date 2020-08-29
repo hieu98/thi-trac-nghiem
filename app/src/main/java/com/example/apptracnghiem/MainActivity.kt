@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemClickListener {
                 }
                 R.id.nav_dedaluu->{
                     val intent= Intent(this,ListDeActivity::class.java)
+                    intent.putExtra("a","2")
                     startActivity(intent)
                 }
                 R.id.log_out->{
