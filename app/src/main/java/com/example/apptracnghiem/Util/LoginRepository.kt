@@ -60,7 +60,7 @@ class LoginRepository(val context:Context) {
         jsonObject.put("password",password)
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.POST,url2,jsonObject,
-            Response.Listener {response ->
+            {response ->
                 Log.v("CONSOLE",response.toString())
                 var jsonObject:JSONObject?=null
                 try {
@@ -79,7 +79,7 @@ class LoginRepository(val context:Context) {
                     callback.onError(e.message)
                 }
             },
-            Response.ErrorListener {error ->
+            {error ->
                 Log.v("CONSOLE","message ${error.message} responseError ${error.networkResponse.statusCode}")
                 val messageError= "error : ${error.networkResponse.statusCode} ".plus("message ${error.message}")
                 callback.onError(messageError)

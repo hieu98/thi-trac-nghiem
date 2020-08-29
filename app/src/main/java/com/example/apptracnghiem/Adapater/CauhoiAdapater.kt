@@ -76,7 +76,10 @@ class CauhoiAdapater(var context: Context, var arrayListCauhoi: ArrayList<CauHoi
         }
         ln4.setOnClickListener {
             arrDapAn[p0].kq="D"
-
+            tvD.setBackgroundResource(R.drawable.background_question_red)
+            tvB.setBackgroundResource(R.drawable.tags_background)
+            tvA.setBackgroundResource(R.drawable.tags_background)
+            tvC.setBackgroundResource(R.drawable.tags_background)
         }
 
         when(arrDapAn[p0].kq){
